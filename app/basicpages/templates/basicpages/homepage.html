@@ -1,0 +1,12 @@
+{% extends 'base_sample.html' %}
+
+{% block title %}
+{{title}}
+{% endblock %}
+
+
+{% block main %}
+    {% for n in news %}
+        <h1>{{ n.title }}</h1>
+    {% endfor %}
+{% endblock %}

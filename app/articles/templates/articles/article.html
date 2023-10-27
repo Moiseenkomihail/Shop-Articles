@@ -1,0 +1,26 @@
+{% extends 'base_sample.html' %}
+
+{% block title %}
+{{title}}
+{% endblock %}
+
+
+{% block main %}
+    <h2>{{article.name}}</h2>
+    <h3>{{article.content}}</h3>
+    <h5>{{article.newswriter}}</h5>
+    <H5>{{article.get_comment}}</H5>
+    {% if request.user.is_authenticated %}
+    <form action="" method="post">
+        {% csrf_token %}
+        {{comment_form}}
+        <input type="submit" value="Send">
+    </form>
+    {% endif %}
+    <H3>Comments:</H3>
+    {% for c in comments %}
+        {{ c.comment }}
+        | {{ c.writer }}
+        </p>
+    {% endfor %}
+{% endblock %}

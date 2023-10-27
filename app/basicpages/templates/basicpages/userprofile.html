@@ -1,0 +1,12 @@
+{% extends 'base_sample.html' %}
+
+{% block title %}
+{{title}}
+{% endblock %}
+
+
+{% block main %}
+{{request.user.username}}
+</p>
+{{request.user.email}}
+{% endblock %}

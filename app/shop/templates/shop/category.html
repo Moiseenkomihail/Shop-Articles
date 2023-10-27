@@ -1,0 +1,18 @@
+{% extends 'base_sample.html' %}
+
+{% block title %}
+{{title}}
+{% endblock %}
+
+
+{% block main %}
+{% for p in products %}
+    <div>
+        <a href="{{ p.get_absolute_url }}">
+            <h4>{{ p.name }}</h4>
+            <h5>{{ p.price }}</h5>
+        </a>
+    </div>
+    <br>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base_sample.html' %}
+
+{% block title %}
+{{title}}
+{% endblock %}
+
+
+{% block main %}
+    {% for a in articles %}
+        <a href="{{ a.get_absolute_url }}"><h2>{{a.name}}</h2></a>
+        <h4>{{a.newswriter}}</h4>
+    {% endfor %}
+{% endblock %}

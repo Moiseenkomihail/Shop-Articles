@@ -1,0 +1,12 @@
+{% extends 'base_sample.html' %}
+
+{% block title %}
+Category
+{% endblock %}
+
+
+{% block main %}
+    {% for c in cats %}
+        <a href="{{ c.get_absolute_url }}"><h2>{{c.name}}</h2></a>
+    {% endfor %}
+{% endblock %}
